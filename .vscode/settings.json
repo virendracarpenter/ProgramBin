@@ -2,6 +2,7 @@
     "files.associations": {
         "cctype": "cpp",
         "optional": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "ostream": "cpp"
     }
 }

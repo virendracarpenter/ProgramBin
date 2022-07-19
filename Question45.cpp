@@ -6,7 +6,7 @@ using namespace std;
 
 string printSequence(string S)
 {
-    string output = "";
+    vector<string> output;
 
     string str[] = {"2", "22", "222",
                     "3", "33", "333",
@@ -21,27 +21,24 @@ string printSequence(string S)
     for (int i = 0; i < n; i++)
     {
         if (S[i] == ' ')
-            output += output + "0";
+        {
+            output.push_back("0");
+        }
         else
         {
             int position = S[i] - 'A';
-            output = output + str[position];
+            output.push_back(str[position]);
         }
     }
-    return output;
+
+    string s;
+    return accumulate(output.begin(), output.end(), s);
 }
 
 int main(int argc, char const *argv[])
 {
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        string s;
-        getline(cin, s);
-        cout << printSequence(s) << endl;
-    }
-
+    string s = "E JJXOMETC";
+    cout << printSequence(s) << endl;
     return 0;
 }
 // https://practice.geeksforgeeks.org/problems/convert-a-sentence-into-its-equivalent-mobile-numeric-keypad-sequence0547/1
